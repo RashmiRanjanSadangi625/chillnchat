@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ChilNChat</title>
+	<link rel="icon" type="image/x-icon" href="./Logo.png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  	<!-- //Socket IO -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="./public/index.js"></script> -->
+  	
+  	<style>
+  		.bcg
+  		{
+  			background-color: #5E17EB;
+  			background-image: url('./public/Logo.png');
+  		}
+  		.form-label
+  		{
+  			text-align: center;
+  		}
+  		.card
+  		{
+  			height: 600px;
+  			overflow: hidden;
+  		}
+  		.card-header
+  		{
+  			height: 100px;
+  		}
+  		.card-body
+  		{
+  			height: 300px;
+  		}
+  		.card-footer
+			{
+				height: 60px;
+			}
+			span
+			{
+				font-weight: bold;
+			}
+			.btn
+			{
+				background-color: #5E17EB;
+			}
+			.message__area
+			{
+				overflow-y: auto;
+				display: flex;
+				flex-direction: column;
+			}
+			.message
+			{
+				padding: 10px;
+				border-radius: 4px;
+				max-width: 300px;
+				margin-bottom: 20px;
+				position: relative;
+			}
+			.message h6
+			{
+				position: absolute;
+				margin-top: 5px;
+				top : -21px;
+				left: 0;
+				font-size: 14px;
+			}
+			
+			.incoming
+			{
+				background-color: #5E17EB;
+				margin-top: 5px;
+			}
+			.incoming p
+			{
+				color: #fff;
+			}
+			.outgoing
+			{
+				background-color: lightgrey;
+				margin-top: 5px;
+				margin-left: auto;
+				text-align: none;
+			}
+			textarea 
+			{
+	 			resize: none;
+			}
+  	</style>
+	
+  <body>
+   		<section class="vh-100 bcg">
+		  <div class="container h-100">
+		    <div class="row d-flex justify-content-center align-items-center h-100">
+		      <div class="col-lg-12 col-xl-11">
+		        <div class="card text-black" style="border-radius: 5px;">
+		          <div class="card-body p-1">
+		          	<div class="card">
+							  <!-- //Card header -->
+							  <div class="card-header d-flex justify-content-between align-items-center">
+							  	<div><img src="./public/Logo.png" height="80" width="80"></div>
+							    <div>Logged in as: <span id="user">{{username}}</span></div>
+							     <a href="/logout"> <button type="button" class="btn btn-primary">Logout</button></a>
+							  </div>
+ 
+							  <!-- Card body -->
+							  <div class="card-body message__area" style=""> </div>
+
+							  <!-- Card footer -->
+							  <div class="card-footer p-1">
+							  	<form action="#" method="POST">
+								   <div class="form-group d-flex justify-content-c">
+								       <textarea class="form-control-md" id="textarea" rows="1" cols="147" placeholder="Enter your message..."></textarea>&nbsp;
+								   </div>
+								  </form>
+							  </div>
+							</div>
+						 </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>	
+ <script type="text/javascript">
+ 	// To stop dragging images
+ 	const img = document.querySelector('img')
+	img.ondragstart = () => {
+	  return false;
+	};
+
+  </script>
+
+  <script src="./public/client.js"></script>
+		
+ </body>
+</head>
