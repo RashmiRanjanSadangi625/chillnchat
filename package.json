@@ -4,7 +4,8 @@
   "description": "chillnchat an application platform for chilling",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js -e hbs,js"
+    "test": "nodemon app.js -e hbs,js",
+    "start": "node src/app.js -e js,hbs"
   },
   "author": "Rashmi Ranjan",
   "license": "ISC",
